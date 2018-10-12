@@ -1,0 +1,672 @@
+
+# No configure file was indicated, so, we will use default parameters!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_start:2103]Not enbaled or connect error,retry after  2 second(s)!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_go2next:1689]ret=0,next_s=7
+[ass_set_status:1722]Change status from "Init" to "Send get key type"
+[ass_send_KEYTYPE:1031]len=115,SEND:{
+        "type": "keyngreq",
+        "sequence":     1,
+        "mac":  "08107965DB48",
+        "keymodelist":  [{
+                        "keymode":      "dh"
+                }]
+}
+[ass_go2next:1689]ret=0,next_s=15
+[ass_set_status:1722]Change status from "Send get key type" to "Recv Key type"
+[ass_RecvData:951]Success recvd len=68.68
+[ass_recv_msgproc:811]Recved:{"keymode":"dh","type":"keyngack","mac":"08107965DB48","sequence":1}
+[ass_recv_msgproc:815]type:keyngack
+[ass_recv_KEYTYPE:711]seq:0
+[ass_recv_KEYTYPE:723]debug:0
+[ass_recv_KEYTYPE:727]key_mode:dh
+[ass_go2next:1689]ret=0,next_s=1
+[ass_set_status:1722]Change status from "Recv Key type" to "Send ECDH"
+[ass_send_ECDH:1150]SEND:{
+        "type": "dh",
+        "sequence":     2,
+        "mac":  "08107965DB48",
+        "data": {
+                "dh_key":       "qsoIl3+Ukw5bvVQszD8hKg==",
+                "dh_p": "7m0veqRRjU451dDHMd6Qww==",
+                "dh_g": "Ag=="
+        }
+}
+[ass_go2next:1689]ret=0,next_s=9
+[ass_set_status:1722]Change status from "Send ECDH" to "Recv ECDH"
+[ass_check_timer:2243]send:1487162205,recv=1487162205,curr_time=1487162206!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_RecvData:951]Success recvd len=92.92
+[ass_recv_msgproc:811]Recved:{"type":"dh","data":{"dh_key":"f0nelWzlLAQ3VBsInQdz4A=="},"mac":"08107965DB48","sequence":2}
+[ass_recv_msgproc:815]type:dh
+size is 16,The shared secret is:
+0000 - 63 7e a6 00 a6 ed 97 d1-e1 f4 9b ee 0e 4d 2c b1   c~...........M,.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@ KEY @@@@@@@@@@@@@@@@@@@@@@@@@
+637ea600a6ed97d1e1f49bee0e4d2cb1
+@@@@@@@@@@@@@@@@@@@@@@@@@@ KEY @@@@@@@@@@@@@@@@@@@@@@@@@
+[ass_go2next:1689]ret=0,next_s=2
+[ass_set_status:1722]Change status from "Recv ECDH" to "Send device register"
+[ass_send_DEVREG:1223]SEND:{
+        "type": "dev_reg",
+        "sequence":     3,
+        "mac":  "08107965DB48",
+        "data": {
+                "vendor":       "Netcore",
+                "model":        "NAP850+",
+                "url":  "",
+                "wireless":     "no"
+        },
+        "phonemac":     "000000000000"
+}
+[ass_send_DEVREG:1226]len=200
+[ass_go2next:1689]ret=0,next_s=10
+[ass_set_status:1722]Change status from "Send device register" to "Recv device register ACK"
+[ass_RecvData:951]Success recvd len=48.48
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":3}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_RecvData:951]Success recvd len=448.389
+[ass_recv_msgproc:811]Recved:{"type":"cfg","status":{"wifi":[{"radio":{"channel":0,"mode":"2.4G"}},{"radio":{"channel":0,"mode":"5G"}}]},"mac":"44F436C0D0CC","set":{"wifi":[{"radio":{"channel":0,"mode":"2.4G"},"ap":[{"key":"9087654321","apidx":0,"auth":"wpapskwpa2psk","ssid":"ChinaNet-X2NTT234","encrypt":"aes"}]},{"radio":{"channel":0,"mode":"5G"},"ap":[{"apidx":0,"key":"9087654321","auth":"wpapskwpa2psk","ssid":"ChinaNet-X2NTT234_5G","encrypt":"aes"}]}]},"sequence":3}
+[ass_recv_msgproc:815]type:cfg
+[ass_go2next:1689]ret=0,next_s=3
+[ass_set_status:1722]Change status from "Recv device register ACK" to "Send configure ACK"
+[ass_send_ACK:1258]SEND:{
+        "type": "ack",
+        "sequence":     3,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=4
+[ass_set_status:1722]Change status from "Send configure ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     4,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_show_conf:212]flag=1,mode=2.4G,band=,channel=0
+[ass_show_conf:220]ap_id=0,mode=2.4G,isolation=,hidessid=,ssid=ChinaNet-X2NTT234,bssid=000000000000,auth=wpapskwpa2psk,encrypt=aes,key=9087654321,egres=,vid=-1,maclist_type=,mac_num=0
+@@@@@@@@@apmib_update set 4 @@@@@@@@@@@@@@@
+@@@@@@[flash_write_by_dev,152]/dev/mtd
+[ass_set_wifi:145]set wifi[mode=2.4G] adv conf ret=0
+@@@@@@@@@apmib_update set 4 @@@@@@@@@@@@@@@
+@@@@@@[flash_write_by_dev,152]/dev/mtd
+
+translate_uri:222;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0
+translate_uri:254
+*******************************encrypt : 6 
+[ass_set_wifi:176]set wifi[0] conf ret=0
+[ass_show_conf:212]flag=1,mode=5G,band=,channel=0
+[ass_show_conf:220]ap_id=0,mode=5G,isolation=,hidessid=,ssid=ChinaNet-X2NTT234_5G,bssid=000000000000,auth=wpapskwpa2psk,encrypt=aes,key=9087654321,egres=,vid=-1,maclist_type=,mac_num=0
+[ass_set_wifi:145]set wifi[mode=5G] adv conf ret=-3
+[ass_set_wifi:176]set wifi[0] conf ret=-4
+@@@@@@@@@apmib_update set 4 @@@@@@@@@@@@@@@
+@@@@@@[flash_write_by_dev,152]/dev/mtd
+set dhcp:0,apmode:0,opmode:1,conntype:1
+[ass_check_timer:2243]send:1487162207,recv=1487162207,curr_time=1487162207!
+SIGNAl 16;reset_flag[1] 
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_RecvData:951]Success recvd len=128.25
+[ass_recv_msgproc:811]Recved:{"type":"cfg","mac":"44F436C0D0CC","set":{"wifiswitch":{"status":"ON"},"ledswitch":{"status":"ON"}},"sequence":3}
+[ass_recv_msgproc:815]type:cfg
+[ass_go2next:1689]ret=0,next_s=3
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send configure ACK"
+[ass_send_ACK:1258]SEND:{
+        "type": "ack",
+        "sequence":     3,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=4
+[ass_set_status:1722]Change status from "Send configure ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     5,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=48.48
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":5}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_check_timer:2243]send:1487162210,recv=1487162210,curr_time=1487162211!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+SIGNAl 16;reset_flag[1] 
+[ass_check_timer:2243]send:1487162210,recv=1487162210,curr_time=1487162212!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+init.sh gw all 
+===========
+init_sh_reset:249;ret=[0]
+==============
+killall: udp_ap_handle: no process killed
+/sbin/ifconfig eth1 down 
+/sbin/ifconfig wlan0 down 
+brctl delif br0 wlan0 
+/sbin/ifconfig wlan0-wds0 down 
+brctl delif br0 wlan0-wds0 
+device wlan0-wds0 is not a slave of br0
+/sbin/ifconfig wlan0-wds1 down 
+brctl delif br0 wlan0-wds1 
+device wlan0-wds1 is not a slave of br0
+/sbin/ifconfig wlan0-wds2 down 
+brctl delif br0 wlan0-wds2 
+device wlan0-wds2 is not a slave of br0
+/sbin/ifconfig wlan0-wds3 down 
+brctl delif br0 wlan0-wds3 
+device wlan0-wds3 is not a slave of br0
+/sbin/ifconfig wlan0-wds4 down 
+brctl delif br0 wlan0-wds4 
+device wlan0-wds4 is not a slave of br0
+/sbin/ifconfig wlan0-wds5 down 
+brctl delif br0 wlan0-wds5 
+device wlan0-wds5 is not a slave of br0
+/sbin/ifconfig wlan0-wds6 down 
+brctl delif br0 wlan0-wds6 
+device wlan0-wds6 is not a slave of br0
+/sbin/ifconfig wlan0-wds7 down 
+brctl delif br0 wlan0-wds7 
+device wlan0-wds7 is not a slave of br0
+/sbin/ifconfig wlan0-va0 down 
+brctl delif br0 wlan0-va0 
+device wlan0-va0 is not a slave of br0
+/sbin/ifconfig wlan0-va1 down 
+brctl delif br0 wlan0-va1 
+device wlan0-va1 is not a slave of br0
+/sbin/ifconfig wlan0-va2 down 
+brctl delif br0 wlan0-va2 
+device wlan0-va2 is not a slave of br0
+/sbin/ifconfig wlan0-va3 down 
+brctl delif br0 wlan0-va3 
+device wlan0-va3 is not a slave of br0
+/sbin/ifconfig wlan0-vxd down 
+brctl delif br0 wlan0-vxd 
+device wlan0-vxd is not a slave of br0
+/proc/wps_btn_delay: cannot create
+killall: xhcatv: no process killed
+killall: multi_ppp: no process killed
+[ass_check_timer:2243]send:1487162210,recv=1487162210,curr_time=1487162213!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+killall: igmpproxy: no process killed
+wlanapp_sh:1942:@@@@@@@####;wlan0
+~~~~~~~~~~~~~~~~~~~~~~ssid=ChinaNet-X2NTT234
+initWlan[6471]stanum=0
+MIB_HW_TX_POWER_CCK_A=3231313131303030302f2f2f2f2e
+MIB_HW_TX_POWER_CCK_A_new=3231313131303030302f2f2f2f2e
+MIB_HW_TX_POWER_HT40_1S_A=2f2e2e2e2e2d2d2d2d2c2c2c2c2b
+MIB_HW_TX_POWER_HT40_1S_An=2f2e2e2e2e2d2d2d2d2c2c2c2c2b
+MIB_HW_TX_POWER_HT20=ffffffffffffffffffffffffffff
+MIB_HW_TX_POWER_HT20n=ffffffffffffffffffffffffffff
+MIB_HW_TX_POWER_DIFF_OFDM=0101010101010101010101010101
+MIB_HW_TX_POWER_DIFF_OFDMn=0101010101010101010101010101
+initWlan:6166,wlan0-vxd is off
+initWlan:6166,wlan0-va0 is off
+initWlan:6166,wlan0-va1 is off
+initWlan:6166,wlan0-va2 is off
+initWlan:6166,wlan0-va3 is off
+brctl setfd br0 0 
+brctl stp br0 0 
+cmd=/bin/brctl delif br0 eth0
+cmd=/bin/brctl addif br0 eth0
+cmd=/sbin/ifconfig eth0 up
+brctl addif br0 wlan0 
+/sbin/ifconfig wlan0 0.0.0.0 
+[PHY_REG_8192E_extlna]
+[AGC_TAB_8192E_extlna]
+[RadioA_8192E_extlna]
+[RadioB_8192E_extlna]
+[ass_check_timer:2243]send:1487162210,recv=1487162210,curr_time=1487162215!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     6,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Sqvlan_set_write 7534  41 1 0 0         0 0 0 0 0 0
+end alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=48.48
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":6}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+ifconfig br0 hw ether 08:10:79:65:db:48 
+wlanapp_sh:1942:@@@@@@@####;wlan0 wlan0-va0 wlan0-va1 wlan0-va2 wlan0-va3 wlan0-vxd
+Register to wlan0
+SIOCDELRT: No such process
+iwcontrol RegisterPID to (wlan0)
+IEEE 802.11f (IAPP) using interface br0 (v1.8)
+argc:3 [dhcpc_sh:296:dhcpc.c]
+open logs file
+options_strings:c:fbH:h:i:np:qr:s:x:v:ld:a:u:
+udhcp client (v0.9.9-pre) started
+script is:  /usr/share/udhcpc/br0.sh 
+@@@@@@rand=26
+SIOCDELRT: No such process
+SIOCDELRT: No such process
+doamin=0
+Sending renew...
+[set_default_route_sh:295:set_default_gw.c], not impl... 
+========================END init.sh===============================
+SIGNAl 17;reset_flag[1] 
+[ass_check_timer:2243]send:1487162215,recv=1487162215,curr_time=1487162216!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162215,recv=1487162215,curr_time=1487162217!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+Sending renew...
+udhcpc_main 2999 6 5
+Lease of 192.168.1.5 obtained, lease time 86400
+[ass_check_timer:2243]send:1487162215,recv=1487162215,curr_time=1487162218!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162215,recv=1487162215,curr_time=1487162219!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162215,recv=1487162215,curr_time=1487162220!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     7,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=48.48
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":7}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+init.sh gw all 
+killall: udp_ap_handle: no process killed
+===========
+init_sh_reset:249;ret=[0]
+==============
+/sbin/ifconfig eth1 down 
+/sbin/ifconfig wlan0 down 
+brctl delif br0 wlan0 
+/sbin/ifconfig wlan0-wds0 down 
+brctl delif br0 wlan0-wds0 
+device wlan0-wds0 is not a slave of br0
+/sbin/ifconfig wlan0-wds1 down 
+brctl delif br0 wlan0-wds1 
+device wlan0-wds1 is not a slave of br0
+/sbin/ifconfig wlan0-wds2 down 
+brctl delif br0 wlan0-wds2 
+device wlan0-wds2 is not a slave of br0
+/sbin/ifconfig wlan0-wds3 down 
+brctl delif br0 wlan0-wds3 
+device wlan0-wds3 is not a slave of br0
+/sbin/ifconfig wlan0-wds4 down 
+brctl delif br0 wlan0-wds4 
+device wlan0-wds4 is not a slave of br0
+/sbin/ifconfig wlan0-wds5 down 
+brctl delif br0 wlan0-wds5 
+device wlan0-wds5 is not a slave of br0
+/sbin/ifconfig wlan0-wds6 down 
+brctl delif br0 wlan0-wds6 
+device wlan0-wds6 is not a slave of br0
+/sbin/ifconfig wlan0-wds7 down 
+brctl delif br0 wlan0-wds7 
+device wlan0-wds7 is not a slave of br0
+/sbin/ifconfig wlan0-va0 down 
+brctl delif br0 wlan0-va0 
+device wlan0-va0 is not a slave of br0
+/sbin/ifconfig wlan0-va1 down 
+brctl delif br0 wlan0-va1 
+device wlan0-va1 is not a slave of br0
+/sbin/ifconfig wlan0-va2 down 
+brctl delif br0 wlan0-va2 
+device wlan0-va2 is not a slave of br0
+/sbin/ifconfig wlan0-va3 down 
+brctl delif br0 wlan0-va3 
+device wlan0-va3 is not a slave of br0
+/sbin/ifconfig wlan0-vxd down 
+brctl delif br0 wlan0-vxd 
+device wlan0-vxd is not a slave of br0
+/proc/wps_btn_delay: cannot create
+killall: xhcatv: no process killed
+killall: multi_ppp: no process killed
+killall: igmpproxy: no process killed
+[ass_check_timer:2243]send:1487162220,recv=1487162220,curr_time=1487162221!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+wlanapp_sh:1942:@@@@@@@####;wlan0
+~~~~~~~~~~~~~~~~~~~~~~ssid=ChinaNet-X2NTT234
+initWlan[6471]stanum=0
+MIB_HW_TX_POWER_CCK_A=3231313131303030302f2f2f2f2e
+MIB_HW_TX_POWER_CCK_A_new=3231313131303030302f2f2f2f2e
+MIB_HW_TX_POWER_HT40_1S_A=2f2e2e2e2e2d2d2d2d2c2c2c2c2b
+MIB_HW_TX_POWER_HT40_1S_An=2f2e2e2e2e2d2d2d2d2c2c2c2c2b
+MIB_HW_TX_POWER_HT20=ffffffffffffffffffffffffffff
+MIB_HW_TX_POWER_HT20n=ffffffffffffffffffffffffffff
+MIB_HW_TX_POWER_DIFF_OFDM=0101010101010101010101010101
+MIB_HW_TX_POWER_DIFF_OFDMn=0101010101010101010101010101
+initWlan:6166,wlan0-vxd is off
+initWlan:6166,wlan0-va0 is off
+initWlan:6166,wlan0-va1 is off
+initWlan:6166,wlan0-va2 is off
+initWlan:6166,wlan0-va3 is off
+brctl setfd br0 0 
+brctl stp br0 0 
+cmd=/bin/brctl delif br0 eth0
+cmd=/bin/brctl addif br0 eth0
+cmd=/sbin/ifconfig eth0 up
+brctl addif br0 wlan0 
+/sbin/ifconfig wlan0 0.0.0.0 
+[PHY_REG_8192E_extlna]
+[AGC_TAB_8192E_extlna]
+[RadioA_8192E_extlna]
+[RadioB_8192E_extlna]
+[ass_check_timer:2243]send:1487162220,recv=1487162220,curr_time=1487162223!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+ifconfig br0 hw ether 08:10:79:65:db:48 
+qvlan_set_write 7534  41 1 0 0   0 0 0 0 0 0
+wlanapp_sh:1942:@@@@@@@####;wlan0 wlan0-va0 wlan0-va1 wlan0-va2 wlan0-va3 wlan0-vxd
+Register to wlan0
+iwcontrol RegisterPID to (wlan0)
+IEEE 802.11f (IAPP) using interface br0 (v1.8)
+argc:3 [dhcpc_sh:296:dhcpc.c]
+open logs file
+options_strings:c:fbH:h:i:np:qr:s:x:v:ld:a:u:
+udhcp client (v0.9.9-pre) started
+script is:  /usr/share/udhcpc/br0.sh 
+SIOCDELRT: No such process
+@@@@@@rand=11
+SIOCDELRT: No such process
+[set_default_route_sh:295:set_default_gw.c], not impl... 
+Sending renew...
+udhcpc_main 2999 6 5
+Lease of 192.168.1.5 obtained, lease time 86400
+doamin=0
+========================END init.sh===============================
+SIGNAl 17;reset_flag[0] 
+[ass_check_timer:2243]send:1487162220,recv=1487162220,curr_time=1487162224!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162220,recv=1487162220,curr_time=1487162225!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     8,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_check_timer:2243]send:1487162225,recv=1487162220,curr_time=1487162226!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_RecvData:951]Success recvd len=48.48
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":8}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_check_timer:2243]send:1487162225,recv=1487162226,curr_time=1487162227!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162225,recv=1487162226,curr_time=1487162228!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162225,recv=1487162226,curr_time=1487162229!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162225,recv=1487162226,curr_time=1487162230!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     9,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=48.48
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":9}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+script is:  /usr/share/udhcpc/br0.sh 
+deleting routers
+SIOCDELRT: No such process
+adding dns 192.168.1.1
+Auto channel choose ch:9 2nd:0
+SIOCADDRT: File exists
+[ass_check_timer:2243]send:1487162230,recv=1487162230,curr_time=1487162231!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+dhcpc_later..................
+* Start NTP daemon
+[ass_check_timer:2243]send:1487162230,recv=1487162230,curr_time=1487162232!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+killall: udhcpd: no process killed
+ntp=wifi.netcoretec.com;len=64
+* ntp client success
+[ass_check_timer:2243]send:1487162230,recv=1487162230,curr_time=1487162233!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162230,recv=1487162230,curr_time=1487162234!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162230,recv=1487162230,curr_time=1487162235!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     10,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=64.64
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":10}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_check_timer:2243]send:1487162235,recv=1487162235,curr_time=1487162236!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162235,recv=1487162235,curr_time=1487162237!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162235,recv=1487162235,curr_time=1487162238!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162235,recv=1487162235,curr_time=1487162239!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162235,recv=1487162235,curr_time=1487162240!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     11,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=64.37
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":11}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+No DHCP ACK with MS_DHCP_STATIC_ROUTE (option 249)
+No DHCP ACK with option DHCPC_CLASSLESS_STATIC_ROUTE
+No DHCP ACK with option DHCP_STATIC_ROUTE
+[ass_check_timer:2243]send:1487162240,recv=1487162240,curr_time=1487162241!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162240,recv=1487162240,curr_time=1487162242!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162240,recv=1487162240,curr_time=1487162243!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162240,recv=1487162240,curr_time=1487162244!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162240,recv=1487162240,curr_time=1487162245!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     12,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=64.32
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":12}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_check_timer:2243]send:1487162245,recv=1487162245,curr_time=1487162246!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162245,recv=1487162245,curr_time=1487162247!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162245,recv=1487162245,curr_time=1487162248!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162245,recv=1487162245,curr_time=1487162249!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162245,recv=1487162245,curr_time=1487162250!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     13,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=64.64
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":13}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_check_timer:2243]send:1487162250,recv=1487162250,curr_time=1487162251!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162250,recv=1487162250,curr_time=1487162252!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162250,recv=1487162250,curr_time=1487162253!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162250,recv=1487162250,curr_time=1487162254!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162250,recv=1487162250,curr_time=1487162255!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     14,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=64.64
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":14}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_check_timer:2243]send:1487162255,recv=1487162255,curr_time=1487162256!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162255,recv=1487162255,curr_time=1487162258!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162255,recv=1487162255,curr_time=1487162259!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162255,recv=1487162255,curr_time=1487162260!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     15,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=64.64
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":15}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_check_timer:2243]send:1487162260,recv=1487162260,curr_time=1487162261!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162260,recv=1487162260,curr_time=1487162262!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162260,recv=1487162260,curr_time=1487162263!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162260,recv=1487162260,curr_time=1487162264!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162260,recv=1487162260,curr_time=1487162265!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[get_wl_alive_host:2300] sta_info_2_web=64, MAX_STA_NUM:128, virtual_name:, NUM_VWLAN:4
+[ass_check_timer:2273]time to send alive 5!
+[ass_set_status:1722]Change status from "Recv ALive ACK" to "Send alive"
+[ass_send_ALIVE:1295]SEND:{
+        "type": "keepalive",
+        "sequence":     16,
+        "mac":  "08107965DB48"
+}
+[ass_go2next:1689]ret=0,next_s=11
+[ass_set_status:1722]Change status from "Send alive" to "Recv ALive ACK"
+[ass_RecvData:951]Success recvd len=64.64
+[ass_recv_msgproc:811]Recved:{"type":"ack","mac":"08107965DB48","sequence":16}
+[ass_recv_msgproc:815]type:ack
+[ass_go2next:1689]ret=0,next_s=16
+[ass_check_timer:2243]send:1487162265,recv=1487162265,curr_time=1487162266!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162265,recv=1487162265,curr_time=1487162267!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode
+[ass_check_timer:2243]send:1487162265,recv=1487162265,curr_time=1487162268!
+iface=br0;opmode=1
+opmode is gateway or BRIDGE_MODE mode

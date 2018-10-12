@@ -1,0 +1,127 @@
+data length: 118
+FLag:?rµ,Len:110
+receive from (('192.168.1.36', 57703)):'?r\x1f\xb5\x00\x00\x00n{\n\t"type":\t"keyngreq",\n\t"sequence":\t7189,\n\t"mac":\t"081079A6C4E0",\n\t"keymodelist":\t[{\n\t\t\t"keymode":\t"dh"\n\t\t}]\n}'
+json_str: {u'mac': u'081079A6C4E0', u'keymodelist': [{u'keymode': u'dh'}], u'type': u'keyngreq', u'sequence': 7189}
+keyngreq
+send keyngack
+data length: 178
+FLag:?rµ,Len:170
+receive from (('192.168.1.36', 57703)):'?r\x1f\xb5\x00\x00\x00\xaa{\n\t"type":\t"dh",\n\t"sequence":\t7190,\n\t"mac":\t"081079A6C4E0",\n\t"data":\t{\n\t\t"dh_key":\t"YDBNWFYZD3o5mc238giSOQ==",\n\t\t"dh_p":\t"pt6oR3TwgXDQPpmJgTySEw==",\n\t\t"dh_g":\t"Ag=="\n\t}\n}'
+json_str: {u'data': {u'dh_g': u'Ag==', u'dh_p': u'pt6oR3TwgXDQPpmJgTySEw==', u'dh_key': u'YDBNWFYZD3o5mc238giSOQ=='}, u'mac': u'081079A6C4E0', u'type': u'dh', u'sequence': 7190}
+dh
+					dh_key:'`0MXV\x19\x0fz9\x99\xcd\xb7\xf2\x08\x929' -> 127856686588825385039095930179396604473
+					dh_p:'\xa6\xde\xa8Gt\xf0\x81p\xd0>\x99\x89\x81<\x92\x13' -> 221807950309094733231265699709469889043
+					dh_g:'\x02' -> 2
+					dh_Server_key V8kfxB/GKySlAb1YvppDQw==
+				AES share KEY 3dfea3983718d5c5fb7b9b1d18e05f42
+send dh
+data length: 200
+FLag:?rµ,Len:192
+receive from (('192.168.1.36', 57703)):'?r\x1f\xb5\x00\x00\x00\xc0\x99\x96ed\xbf0\xc1f\x99O\x00\xbe\xca\xbe\xc1\x17\xb9\x0e\xa0)\x99\xf4kb(G\xa5\xdd\x06\x17\x15\xf4\xdaV\x99.<\xe5C\xe8\xc4\x10\x80X$9l\xb7?4\xf7\xd5\xb2\xf5\xdd3\xeaA\x8aq\x8b\x8f>\x018\x1aR\x1c&Z\xaa\x01\xad\x95%\xa0\xae\xa9\xb5\xac\xad\x13V\x01[\xba\xa3\x07\x98rE\xfd\xd3\x8dU\xcc\xab\xef\x9bP\xab!g\x92SM\xfa\xae$@\xa4\xaaV:\xc5I\x8e\t\xe3\x13\xd7K\xee\xb3\xfbK\x8b\xa4\xe57\xbb\xb4\x88i\x9a \re\xd2\xe8m\xd6`t\xda\x94\x8d\x82\x14jhG\xfevR\\\x8ct\xd2\xae&\xe6\xb8q_%\xc4.\xf0G\x9b\xdcA{(\xab3\xb4\xb5\xb1o\x01\x0e\xc0\xf5y>\xf5@8\xfdV'
+cryp data:-> ('\x99\x96ed\xbf0\xc1f\x99O\x00\xbe\xca\xbe\xc1\x17\xb9\x0e\xa0)\x99\xf4kb(G\xa5\xdd\x06\x17\x15\xf4\xdaV\x99.<\xe5C\xe8\xc4\x10\x80X$9l\xb7?4\xf7\xd5\xb2\xf5\xdd3\xeaA\x8aq\x8b\x8f>\x018\x1aR\x1c&Z\xaa\x01\xad\x95%\xa0\xae\xa9\xb5\xac\xad\x13V\x01[\xba\xa3\x07\x98rE\xfd\xd3\x8dU\xcc\xab\xef\x9bP\xab!g\x92SM\xfa\xae$@\xa4\xaaV:\xc5I\x8e\t\xe3\x13\xd7K\xee\xb3\xfbK\x8b\xa4\xe57\xbb\xb4\x88i\x9a \re\xd2\xe8m\xd6`t\xda\x94\x8d\x82\x14jhG\xfevR\\\x8ct\xd2\xae&\xe6\xb8q_%\xc4.\xf0G\x9b\xdcA{(\xab3\xb4\xb5\xb1o\x01\x0e\xc0\xf5y>\xf5@8\xfdV',)
+Aes_key:-> 3dfea3983718d5c5fb7b9b1d18e05f42
+decryp data:-> K:9DI@U
+9TUForeg",
+	"sequence":	7191,
+	"mac":	"081079A6C4E0",
+	"data":	{
+		"vendor":	"Netcore",
+		"model":	"NAP850+",
+		"url":	"",
+		"wireless":	"no"
+	},
+	"phonemac":	"000000000000"
+}
+AES_encrypt_data: 5f52ff6d93e7c0abab0f6b0ef5ce5d0dfa4f3aee56f851074fba9230cff5aad1d68a8ac4457aaba93e5fa584f051334b708ce9bcee5b287c6ad6a66f817ad8d4
+					dh_key:'`0MXV\x19\x0fz9\x99\xcd\xb7\xf2\x08\x929' -> 127856686588825385039095930179396604473
+					dh_p:'\xa6\xde\xa8Gt\xf0\x81p\xd0>\x99\x89\x81<\x92\x13' -> 221807950309094733231265699709469889043
+					dh_g:'\x02' -> 2
+					dh_Server_key V8kfxB/GKySlAb1YvppDQw==
+				AES share KEY 3dfea3983718d5c5fb7b9b1d18e05f42
+send dh
+data length: 0
+Connent Scaning!!!!
+data length: 118
+FLag:?rµ,Len:110
+receive from (('192.168.1.36', 57704)):'?r\x1f\xb5\x00\x00\x00n{\n\t"type":\t"keyngreq",\n\t"sequence":\t7192,\n\t"mac":\t"081079A6C4E0",\n\t"keymodelist":\t[{\n\t\t\t"keymode":\t"dh"\n\t\t}]\n}'
+json_str: {u'mac': u'081079A6C4E0', u'keymodelist': [{u'keymode': u'dh'}], u'type': u'keyngreq', u'sequence': 7192}
+keyngreq
+send keyngack
+data length: 178
+FLag:?rµ,Len:170
+receive from (('192.168.1.36', 57704)):'?r\x1f\xb5\x00\x00\x00\xaa{\n\t"type":\t"dh",\n\t"sequence":\t7193,\n\t"mac":\t"081079A6C4E0",\n\t"data":\t{\n\t\t"dh_key":\t"3yMTfQdxQRv6YbMFGaxv+w==",\n\t\t"dh_p":\t"8Mw03NUYw94yaqxp5hpGew==",\n\t\t"dh_g":\t"Ag=="\n\t}\n}'
+json_str: {u'data': {u'dh_g': u'Ag==', u'dh_p': u'8Mw03NUYw94yaqxp5hpGew==', u'dh_key': u'3yMTfQdxQRv6YbMFGaxv+w=='}, u'mac': u'081079A6C4E0', u'type': u'dh', u'sequence': 7193}
+dh
+					dh_key:'\xdf#\x13}\x07qA\x1b\xfaa\xb3\x05\x19\xaco\xfb' -> 296599968721691053445619039516429676539
+					dh_p:'\xf0\xcc4\xdc\xd5\x18\xc3\xde2j\xaci\xe6\x1aF{' -> 320075019728966303630041731858347738747
+					dh_g:'\x02' -> 2
+					dh_Server_key YAdpRPahJqY27/qYSZsbwA==
+				AES share KEY c73213e2dc9283f4c7169030655e8e0b
+send dh
+data length: 200
+FLag:?rµ,Len:192
+receive from (('192.168.1.36', 57704)):"?r\x1f\xb5\x00\x00\x00\xc03m\x00\xaf5\xaa\xc6;\x03\x8f\x87\xa2\xd8\xe1\xd8\r\x03W\xc9\xa2c'\x08\x1ca\x89\xc1\xec\xde\xb9\xa1\xcb\x11d^\xaaq\xaa:3'Y\x13Y,\x94aV\x1b9\x8aM\xbf\xadnq\xc9\xaf\x7f\xeb  \x8bp\xfe\x9a\x11\xfcozBa5)\xdb7\x8f\xdd\xbb\xad\x06\xdf\xdf\x1e\xdf\x17\xef\xee\x00\xb4\xba|\x88Q\x9c7\x18[r:Mz\xa7v\xa1\xe8|\x8b\xd7\xbdp}\x18\x1e\x18@\x80\xaaH\xae\x02eg\x9dT\xc1\x1e\x96\xb6\xe7\x88\x85\xa1\x1cQ\x168?\x8ap\x92C\xde\xa7\x808B\xfd\xce\xec\xe8\xd3\xea\x05RN\x83!\xacq\xc7\xc4\x1a\x7f[\xcdv'\xea\x94\xb6\x89\xdd\x7f\x80\xcb'4q\x1c\xa5\xe9\xb8Q{\xab\xc0^\x97l\x85\x88"
+cryp data:-> ("3m\x00\xaf5\xaa\xc6;\x03\x8f\x87\xa2\xd8\xe1\xd8\r\x03W\xc9\xa2c'\x08\x1ca\x89\xc1\xec\xde\xb9\xa1\xcb\x11d^\xaaq\xaa:3'Y\x13Y,\x94aV\x1b9\x8aM\xbf\xadnq\xc9\xaf\x7f\xeb  \x8bp\xfe\x9a\x11\xfcozBa5)\xdb7\x8f\xdd\xbb\xad\x06\xdf\xdf\x1e\xdf\x17\xef\xee\x00\xb4\xba|\x88Q\x9c7\x18[r:Mz\xa7v\xa1\xe8|\x8b\xd7\xbdp}\x18\x1e\x18@\x80\xaaH\xae\x02eg\x9dT\xc1\x1e\x96\xb6\xe7\x88\x85\xa1\x1cQ\x168?\x8ap\x92C\xde\xa7\x808B\xfd\xce\xec\xe8\xd3\xea\x05RN\x83!\xacq\xc7\xc4\x1a\x7f[\xcdv'\xea\x94\xb6\x89\xdd\x7f\x80\xcb'4q\x1c\xa5\xe9\xb8Q{\xab\xc0^\x97l\x85\x88",)
+Aes_key:-> c73213e2dc9283f4c7169030655e8e0b
+decryp data:-> K:9DI@U
+9TUForeg",
+	"sequence":	7194,
+	"mac":	"081079A6C4E0",
+	"data":	{
+		"vendor":	"Netcore",
+		"model":	"NAP850+",
+		"url":	"",
+		"wireless":	"no"
+	},
+	"phonemac":	"000000000000"
+}
+AES_encrypt_data: 3bde405a842906865b644f35b4e77cf34d452e3d48ee433762b0d4dde555581f347157414e69a22a39a1929252b864941403770ac8c160a6247d9ca618b31487
+					dh_key:'\xdf#\x13}\x07qA\x1b\xfaa\xb3\x05\x19\xaco\xfb' -> 296599968721691053445619039516429676539
+					dh_p:'\xf0\xcc4\xdc\xd5\x18\xc3\xde2j\xaci\xe6\x1aF{' -> 320075019728966303630041731858347738747
+					dh_g:'\x02' -> 2
+					dh_Server_key YAdpRPahJqY27/qYSZsbwA==
+				AES share KEY c73213e2dc9283f4c7169030655e8e0b
+send dh
+data length: 0
+Connent Scaning!!!!
+data length: 118
+FLag:?rµ,Len:110
+receive from (('192.168.1.36', 57705)):'?r\x1f\xb5\x00\x00\x00n{\n\t"type":\t"keyngreq",\n\t"sequence":\t7195,\n\t"mac":\t"081079A6C4E0",\n\t"keymodelist":\t[{\n\t\t\t"keymode":\t"dh"\n\t\t}]\n}'
+json_str: {u'mac': u'081079A6C4E0', u'keymodelist': [{u'keymode': u'dh'}], u'type': u'keyngreq', u'sequence': 7195}
+keyngreq
+send keyngack
+data length: 178
+FLag:?rµ,Len:170
+receive from (('192.168.1.36', 57705)):'?r\x1f\xb5\x00\x00\x00\xaa{\n\t"type":\t"dh",\n\t"sequence":\t7196,\n\t"mac":\t"081079A6C4E0",\n\t"data":\t{\n\t\t"dh_key":\t"ORGGoun+2cTuUgCPjymI6Q==",\n\t\t"dh_p":\t"oLqzJw0O0h4juLkxiIKS0w==",\n\t\t"dh_g":\t"Ag=="\n\t}\n}'
+json_str: {u'data': {u'dh_g': u'Ag==', u'dh_p': u'oLqzJw0O0h4juLkxiIKS0w==', u'dh_key': u'ORGGoun+2cTuUgCPjymI6Q=='}, u'mac': u'081079A6C4E0', u'type': u'dh', u'sequence': 7196}
+dh
+					dh_key:'9\x11\x86\xa2\xe9\xfe\xd9\xc4\xeeR\x00\x8f\x8f)\x88\xe9' -> 75856995556602616292678446888400816361
+					dh_p:"\xa0\xba\xb3'\r\x0e\xd2\x1e#\xb8\xb91\x88\x82\x92\xd3" -> 213645880186532631650920681016370827987
+					dh_g:'\x02' -> 2
+					dh_Server_key ZEkeBH96mN84FME5wwEYUg==
+				AES share KEY 8c4f22a3364823383fcceb9f385c3fcc
+send dh
+data length: 200
+FLag:?rµ,Len:192
+receive from (('192.168.1.36', 57705)):'?r\x1f\xb5\x00\x00\x00\xc0\x15r;vD0\x8aT\xc6\xe8\x92X\x16B\xb4\x8d\xcd[t\xdcl\xee\xe1\xa0\xda\x80#u\xb1\xc0\x8f\xf1\xee\xf1aY\x1c\xddJ\xae6\xca8\xdf\xe5J\x9a\xccD\xeb\xc3\x1c,\x94y\xcf\xfc\x87\xc1a\x06_\x9f("e\x95\x84\x0egf@t\x89t\xaa\xd2?0\x1d\x9fOSo\xca]\x18\xe9meZ\xa4\x12\x9a\xed\x19f*\xed\xa5\x9fya\x93\xed6\xf8:p\x92\xcb\xd7k\x01\'\xee>^\x1c\xec\xff\xd2\xc6Lq\x0f\x13\x91B\x80\xe4[\x9a\t\xc5\xc6\x1b\xb2\x08\xf0\xf5\x1f\xe7nX\xe0\x99\xa1f\xea\xdf#\x0f\x9b\xd7\xe4#P\xbd-\x87\xde\xde\xe0nLUT&\x96\xe19\x91\x86\xe6y\xe3\xde"\xb1\xa0j-2\xb4\x01CF:\x9e\xec\xe3'
+cryp data:-> ('\x15r;vD0\x8aT\xc6\xe8\x92X\x16B\xb4\x8d\xcd[t\xdcl\xee\xe1\xa0\xda\x80#u\xb1\xc0\x8f\xf1\xee\xf1aY\x1c\xddJ\xae6\xca8\xdf\xe5J\x9a\xccD\xeb\xc3\x1c,\x94y\xcf\xfc\x87\xc1a\x06_\x9f("e\x95\x84\x0egf@t\x89t\xaa\xd2?0\x1d\x9fOSo\xca]\x18\xe9meZ\xa4\x12\x9a\xed\x19f*\xed\xa5\x9fya\x93\xed6\xf8:p\x92\xcb\xd7k\x01\'\xee>^\x1c\xec\xff\xd2\xc6Lq\x0f\x13\x91B\x80\xe4[\x9a\t\xc5\xc6\x1b\xb2\x08\xf0\xf5\x1f\xe7nX\xe0\x99\xa1f\xea\xdf#\x0f\x9b\xd7\xe4#P\xbd-\x87\xde\xde\xe0nLUT&\x96\xe19\x91\x86\xe6y\xe3\xde"\xb1\xa0j-2\xb4\x01CF:\x9e\xec\xe3',)
+Aes_key:-> 8c4f22a3364823383fcceb9f385c3fcc
+decryp data:-> K:9DI@U
+9TUForeg",
+	"sequence":	7197,
+	"mac":	"081079A6C4E0",
+	"data":	{
+		"vendor":	"Netcore",
+		"model":	"NAP850+",
+		"url":	"",
+		"wireless":	"no"
+	},
+	"phonemac":	"000000000000"
+}
+AES_encrypt_data: c4161a1b552efd6cd3ee0c1ce08f22d03c761c68d114dd65634a77cfed9f3d7e84f84feaf9279cb38267a28f1e83feb39db6d69fa214f32b1212a62032e58b6b
+					dh_key:'9\x11\x86\xa2\xe9\xfe\xd9\xc4\xeeR\x00\x8f\x8f)\x88\xe9' -> 75856995556602616292678446888400816361
+					dh_p:"\xa0\xba\xb3'\r\x0e\xd2\x1e#\xb8\xb91\x88\x82\x92\xd3" -> 213645880186532631650920681016370827987
+					dh_g:'\x02' -> 2
+					dh_Server_key ZEkeBH96mN84FME5wwEYUg==
+				AES share KEY 8c4f22a3364823383fcceb9f385c3fcc
+send dh
